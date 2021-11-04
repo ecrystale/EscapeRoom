@@ -8,6 +8,8 @@ public class DoorEntry : MonoBehaviour
     public int[] doorkeys;
     public string nxtlvl;
     public bool locked = true;
+    public bool isSceneDoor = false;
+    public int keyNum = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,19 +24,28 @@ public class DoorEntry : MonoBehaviour
 
     private void OnTriggerEnter(Collider other){
       int open = 0;
+      int startingKeys = PublicVars.keys[keyNum];
       if(other.gameObject.CompareTag("Player")){
         if(!locked){
-          SceneManager.LoadScene(nxtlvl);
+          if(isSceneDoor){
+            SceneManager.LoadScene(nxtlvl);
+          }else{
+            Destroy(this.gameObject);
+          }
         }
         else{
-          foreach(int i in doorkeys){
-            if(!PublicVars.keys[i]){
-              open++;
-            }
+          if(startingKeys - doorkeys.Length < 0){
+            open++;
+          }else{
+            PublicVars.keys[keyNum] -= doorkeys.Length;
           }
           if(open == 0){
             locked = false;
-            SceneManager.LoadScene(nxtlvl);
+            if(isSceneDoor){
+              SceneManager.LoadScene(nxtlvl);
+            }else{
+              Destroy(this.gameObject);
+            }
           }
         }
       }

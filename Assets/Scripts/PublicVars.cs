@@ -1,4 +1,4 @@
 public static class PublicVars
 {
-    public static bool[] keys = {false, false};
+    public static int[] keys = {0,0,0};
 }

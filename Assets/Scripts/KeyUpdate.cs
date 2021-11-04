@@ -18,7 +18,7 @@ public class KeyUpdate : MonoBehaviour
     }
     void OnTriggerEnter(Collider other){
       if(other.gameObject.CompareTag("Player")){
-        PublicVars.keys[keynum] = true;
+        PublicVars.keys[keynum] += 1;
         Destroy(gameObject);
       }
     }
