@@ -671,10 +671,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 491446902}
     m_Modifications:
-    - target: {fileID: 6966247837932050035, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
-      propertyPath: doorkeys.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6966247837932050036, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -4148,6 +4144,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 192764197}
     m_Modifications:
+    - target: {fileID: 2094841046, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
+      propertyPath: m_Size.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6966247837932050035, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
       propertyPath: keyNum
       value: 1
@@ -4155,6 +4155,14 @@ PrefabInstance:
     - target: {fileID: 6966247837932050035, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
       propertyPath: isSceneDoor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966247837932050035, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
+      propertyPath: doorkeys.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6966247837932050035, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
+      propertyPath: doorkeys.Array.data[0]
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6966247837932050036, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
       propertyPath: m_RootOrder
@@ -4204,5 +4212,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2094841046, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6f6d726a7042041d19c02ace96bf7233, type: 3}
