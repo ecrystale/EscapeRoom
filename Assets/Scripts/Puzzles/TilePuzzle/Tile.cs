@@ -28,7 +28,7 @@ public class Tile : MonoBehaviour{
 
 
             GameObject offsetTile = TileBoard.board[pos[0] + offset[i, 0], pos[1] + offset[i, 1]];
-            print(offsetTile.gameObject.name);
+            // print(offsetTile.gameObject.name);
             if(offsetTile.gameObject.name == "empty"){
                 // print("movable");
                 Vector3 tempPos = gameObject.transform.position;
