@@ -40,6 +40,7 @@ public class DoorEntry : MonoBehaviour
             PublicVars.keys[keyNum] -= doorkeys.Length;
           }
           if(open == 0){
+            print(open);
             locked = false;
             if(isSceneDoor){
               SceneManager.LoadScene(nxtlvl);
