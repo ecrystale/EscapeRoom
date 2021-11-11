@@ -23,6 +23,7 @@ public class DoorEntry : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
+      print("Collision detected");
       int open = 0;
       int startingKeys = PublicVars.keys[keyNum];
       if(other.gameObject.CompareTag("Player")){
