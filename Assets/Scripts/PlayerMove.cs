@@ -19,11 +19,11 @@ public class PlayerMove : MonoBehaviour
     {
       if(Input.GetMouseButtonDown(0)){ //1 is right, 0 is left
         RaycastHit hit;
-        if(Physics.Raycast(maincam.ScreenPointToRay(Input.mousePosition), out hit, 200)){
+        if(Physics.Raycast(maincam.ScreenPointToRay(Input.mousePosition), out hit, 300)){
           _navMesh.destination = hit.point; //destination to player for enemies
         }
 
       }
     }
-    
+
 }
