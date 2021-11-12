@@ -5,8 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
+  TransitionManager transitionManager;
+
+  void Start(){
+    transitionManager = FindObjectOfType<TransitionManager>();
+  }
+
   public void Load(string sceneName)
   {
-      SceneManager.LoadScene(sceneName);
+    transitionManager.LoadScene(sceneName);
   }
 }
