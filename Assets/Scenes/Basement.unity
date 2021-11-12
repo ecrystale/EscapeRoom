@@ -3989,7 +3989,7 @@ MonoBehaviour:
   isSceneDoor: 1
   keyNum: 2
   door_open: {fileID: 0}
-  doorText: {fileID: 0}
+  doorText: {fileID: 1110302395}
 --- !u!65 &747729811
 BoxCollider:
   m_ObjectHideFlags: 0
