@@ -4,25 +4,32 @@ using UnityEngine;
 
 public class TileBoard : MonoBehaviour{
     public bool solved = false;
-    public static GameObject[,] board = new GameObject[3, 3];
-    public GameObject[] tiles = new GameObject[9];
+    public GameObject[,] board;
+    public GameObject[] tiles;
+    public int numChildren;
 
     void Start(){
-        tiles = GameObject.FindGameObjectsWithTag("Tile");
+        numChildren = gameObject.transform.childCount;
+        tiles = new GameObject[numChildren];
+        board = new GameObject[numChildren, numChildren];
        
+        for(int i = 0; i < numChildren; i++){
+            tiles[i] = gameObject.transform.GetChild(i).gameObject;
+        }
+
         int count = 0;
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
-               board[i, j] = tiles[count];
-               count++;
+        for(int i = 0; i < Mathf.Sqrt(numChildren); i++){
+            for(int j = 0; j < Mathf.Sqrt(numChildren); j++){
+                board[i, j] = tiles[count];
+                count++;
             }
         }
     }
 
     void LateUpdate(){
         if(solved){
-            for(int i = 0; i < 3; i++){
-                for(int j = 0; j < 3; j++){
+            for(int i = 0; i < Mathf.Sqrt(numChildren); i++){
+                for(int j = 0; j < Mathf.Sqrt(numChildren); j++){
                     Destroy(board[i, j].GetComponent<HighlightOnHover>());
                     Destroy(board[i, j].GetComponent<Tile>());
                 }
@@ -33,11 +40,11 @@ public class TileBoard : MonoBehaviour{
         }
 
         int count = 1;
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
+        for(int i = 0; i < Mathf.Sqrt(numChildren); i++){
+            for(int j = 0; j < Mathf.Sqrt(numChildren); j++){
                 if(board[i, j].name == count.ToString()){
                     count++;
-                    if(count == 9){
+                    if(count == tiles.Length){
                         solved = true;
                     }
                 } else {
