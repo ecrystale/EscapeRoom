@@ -12,7 +12,10 @@ public class StartGame : MonoBehaviour{
     }
 
     public void PlayGame(){
-
         transitionManager.LoadScene("Basement");
+    }
+
+    public void QuitGame(){
+        Application.Quit();
     }
 }

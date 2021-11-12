@@ -27,7 +27,10 @@ public class PlayerMove : MonoBehaviour
         if(Physics.Raycast(maincam.ScreenPointToRay(Input.mousePosition), out hit, 300)){
           _navMesh.destination = hit.point; //destination to player for enemies
         }
+      }
 
+      if(Input.GetKeyDown(KeyCode.Escape)){
+        Application.Quit();
       }
     }
     void OnTriggerEnter(Collider other){
