@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGame : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class StartGame : MonoBehaviour{
+
+    TransitionManager transitionManager;
+
+    void Start(){
+        transitionManager = FindObjectOfType<TransitionManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public void PlayGame(){
 
-    public void PlayGame ()
-    {
-        SceneManager.LoadScene("Basement");
+        transitionManager.LoadScene("Basement");
     }
 }

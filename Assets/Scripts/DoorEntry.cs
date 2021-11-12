@@ -16,9 +16,12 @@ public class DoorEntry : MonoBehaviour
     AudioSource _audiosrc;
     public Text doorText;
     // Start is called before the first frame update
+    TransitionManager transitionManager;
+
     void Start()
     {
       _audiosrc = GetComponent<AudioSource>();
+      transitionManager = FindObjectOfType<TransitionManager>();
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class DoorEntry : MonoBehaviour
         if(!locked){
           StartCoroutine(playaudio());
           if(isSceneDoor){
-            SceneManager.LoadScene(nxtlvl);
+            transitionManager.LoadScene(nxtlvl);
           }else{
             Destroy(this.gameObject);
           }
@@ -54,7 +57,7 @@ public class DoorEntry : MonoBehaviour
             locked = false;
             StartCoroutine(playaudio());
             if(isSceneDoor){
-              SceneManager.LoadScene(nxtlvl);
+              transitionManager.LoadScene(nxtlvl);
             }else{
               Destroy(this.gameObject);
             }
