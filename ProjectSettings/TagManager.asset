@@ -7,6 +7,7 @@ TagManager:
   - Tile
   - PathTile
   - Key
+  - Time
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
     NavMeshAgent _navMesh;
     Camera maincam;
     public AudioClip collect;
+    public AudioClip timeLoseSound;
+    public AudioClip timeGainSound;
     AudioSource _audiosrc;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,14 @@ public class PlayerMove : MonoBehaviour
     void OnTriggerEnter(Collider other){
       if(other.gameObject.CompareTag("Key")){
         _audiosrc.PlayOneShot(collect, 0.35f);
+      }
+
+      if(other.gameObject.CompareTag("Time")){
+        if(other.gameObject.GetComponent<AddTimeCollectible>().amountAdded < 0){
+          _audiosrc.PlayOneShot(timeLoseSound, 0.35f);
+        } else {
+          _audiosrc.PlayOneShot(timeGainSound, 0.35f);
+        }
       }
     }
 

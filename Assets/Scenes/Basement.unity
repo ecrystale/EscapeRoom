@@ -4037,6 +4037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collect: {fileID: 8300000, guid: 4656ea488945a465a8f848ff0b4c0a7c, type: 3}
+  timeLoseSound: {fileID: 8300000, guid: 26a485a82cc6a46ef8409c8e80071659, type: 3}
+  timeGainSound: {fileID: 8300000, guid: e56566c0a97c64c37bf6082e4592e6fe, type: 3}
 --- !u!195 &747841345
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4444,6 +4446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collect: {fileID: 0}
+  timeLoseSound: {fileID: 0}
+  timeGainSound: {fileID: 0}
 --- !u!54 &813058282
 Rigidbody:
   m_ObjectHideFlags: 0
