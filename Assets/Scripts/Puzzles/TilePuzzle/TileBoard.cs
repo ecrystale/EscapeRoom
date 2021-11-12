@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TileBoard : MonoBehaviour{
+    public bool solved = false;
     public static GameObject[,] board = new GameObject[3, 3];
     public GameObject[] tiles = new GameObject[9];
 
@@ -18,8 +19,8 @@ public class TileBoard : MonoBehaviour{
         }
     }
 
-    void Update(){
-        if(PublicVars.TilePuzzleSolved){
+    void LateUpdate(){
+        if(solved){
             for(int i = 0; i < 3; i++){
                 for(int j = 0; j < 3; j++){
                     Destroy(board[i, j].GetComponent<HighlightOnHover>());
@@ -37,7 +38,7 @@ public class TileBoard : MonoBehaviour{
                 if(board[i, j].name == count.ToString()){
                     count++;
                     if(count == 9){
-                        PublicVars.TilePuzzleSolved = true;
+                        solved = true;
                     }
                 } else {
                     return;

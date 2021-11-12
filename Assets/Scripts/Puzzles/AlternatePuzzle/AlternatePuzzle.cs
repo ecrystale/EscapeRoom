@@ -13,7 +13,7 @@ public class AlternatePuzzle : MonoBehaviour{
         }
     }
 
-    void Update(){
+    void LateUpdate(){
         if(solved){
             for(int i = 0; i < blocks.Count; i++){
                 Destroy(blocks[i].GetComponent<HighlightOnHover>());

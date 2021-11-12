@@ -5,18 +5,20 @@ using UnityEngine;
 public class HighlightOnHover : MonoBehaviour{
 
     Color startcolor;
+    Color lighterHue;
     MeshRenderer _renderer;
     float tintFactor = 0.4f;
 
     void Start(){
        _renderer = GetComponent<MeshRenderer>();
+       startcolor = _renderer.material.color;
+       lighterHue = new Color((startcolor.r * 255 + (255 - startcolor.r * 255) * tintFactor) / 255,
+                                             (startcolor.g * 255 + (255 - startcolor.g * 255) * tintFactor) / 255,
+                                             (startcolor.b * 255 + (255 - startcolor.b * 255) * tintFactor) / 255);
     }
 
     void OnMouseEnter(){
-        startcolor = _renderer.material.color;
-        _renderer.material.color = new Color((startcolor.r * 255 + (255 - startcolor.r * 255) * tintFactor) / 255,
-                                             (startcolor.g * 255 + (255 - startcolor.g * 255) * tintFactor) / 255,
-                                             (startcolor.b * 255 + (255 - startcolor.b * 255) * tintFactor) / 255);
+        _renderer.material.color = lighterHue;
     }
  
     void OnMouseExit(){
