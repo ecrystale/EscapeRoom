@@ -7,9 +7,12 @@ public class PlayerMove : MonoBehaviour
 {
     NavMeshAgent _navMesh;
     Camera maincam;
+    public AudioClip collect;
+    AudioSource _audiosrc;
     // Start is called before the first frame update
     void Start()
     {
+      _audiosrc = GetComponent<AudioSource>();
       _navMesh = GetComponent<NavMeshAgent>();
       maincam = Camera.main;
     }
@@ -23,6 +26,11 @@ public class PlayerMove : MonoBehaviour
           _navMesh.destination = hit.point; //destination to player for enemies
         }
 
+      }
+    }
+    void OnTriggerEnter(Collider other){
+      if(other.gameObject.CompareTag("Key")){
+        _audiosrc.PlayOneShot(collect);
       }
     }
 
