@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
         if(other.gameObject.GetComponent<AddTimeCollectible>().amountAdded < 0){
           _audiosrc.PlayOneShot(timeLoseSound, 0.35f);
         } else {
-          _audiosrc.PlayOneShot(timeGainSound, 0.35f);
+          _audiosrc.PlayOneShot(timeGainSound, 0.65f);
         }
       }
     }
