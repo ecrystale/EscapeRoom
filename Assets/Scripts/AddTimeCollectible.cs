@@ -16,4 +16,7 @@ public class AddTimeCollectible : MonoBehaviour{
         Destroy(gameObject);
       }
     }
+    void Update(){
+        transform.Rotate(new Vector3(0, 100f, 0) * Time.deltaTime);
+    }
 }

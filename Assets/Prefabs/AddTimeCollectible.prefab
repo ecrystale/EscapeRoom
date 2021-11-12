@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6565486583651199925}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.026613167, z: 0, w: 0.9996458}
   m_LocalPosition: {x: 0.628, y: -1.491, z: 4.187}
-  m_LocalScale: {x: 0.49192888, y: 0.37831295, z: 0.37831298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 3.05, z: 0}
 --- !u!33 &6565486583651199926
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6565486583651199925}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300002, guid: 3da57b887e4888947839b3313e880f28, type: 3}
 --- !u!23 &6565486583651199927
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55,14 +55,15 @@ MeshRenderer:
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
+  m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c47103bc55c22734aad222d751978461, type: 2}
+  - {fileID: 2100000, guid: 099241b3f9881c54d854dcd4fcbda0d9, type: 2}
+  - {fileID: 2100000, guid: 40a8ae58dd3f1d5499694777e3945a80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,8 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountAdded: 0
-  timeLoseSound: {fileID: 8300000, guid: 26a485a82cc6a46ef8409c8e80071659, type: 3}
-  timeGainSound: {fileID: 8300000, guid: e56566c0a97c64c37bf6082e4592e6fe, type: 3}
 --- !u!82 &5432388041446430422
 AudioSource:
   m_ObjectHideFlags: 0
