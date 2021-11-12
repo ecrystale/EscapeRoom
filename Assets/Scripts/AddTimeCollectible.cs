@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class AddTimeCollectible : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float amountAdded;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnTriggerEnter(Collider other){
       if(other.gameObject.CompareTag("Player")){
-        PublicVars.timeRemaining += 60f;
+        if(PublicVars.timeRemaining + amountAdded < 0){
+          PublicVars.timeRemaining = 1;
+        } else {
+          PublicVars.timeRemaining += amountAdded;
+        }
         Destroy(gameObject);
       }
     }
