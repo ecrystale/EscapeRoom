@@ -11,8 +11,11 @@ public class TileBoard : MonoBehaviour{
     public Material onFinish;
 
     public GameObject[] keys;
+    public AudioClip success;
+    AudioSource _audiosrc;
 
     void Start(){
+        _audiosrc = GetComponent<AudioSource>();
         foreach(GameObject key in keys){
           key.SetActive(false);
         }
@@ -53,6 +56,7 @@ public class TileBoard : MonoBehaviour{
                     count++;
                     if(count == tiles.Length){
                         solved = true;
+                        _audiosrc.PlayOneShot(success);
 
                         for(int k = 0; k < tiles.Length; k++){
                             tiles[k].GetComponent<Renderer>().material = onFinish;

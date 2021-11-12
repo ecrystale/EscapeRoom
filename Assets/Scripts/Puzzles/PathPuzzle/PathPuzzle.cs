@@ -12,6 +12,9 @@ public class PathPuzzle : MonoBehaviour{
     public Material onFinish;
 
     public GameObject[] keys;
+    public AudioClip success;
+    public AudioClip fail;
+    AudioSource _audiosrc;
 
     public void setLast(GameObject curr){
         int[] currPos = new int[2];
@@ -29,6 +32,7 @@ public class PathPuzzle : MonoBehaviour{
     }
 
     void Start(){
+        _audiosrc = GetComponent<AudioSource>();
         foreach(GameObject key in keys){
           key.SetActive(false);
         }
@@ -68,6 +72,7 @@ public class PathPuzzle : MonoBehaviour{
             }
 
             solved = true;
+            _audiosrc.PlayOneShot(success);
 
             for(int i = 0; i < tiles.Length; i++){
                 tiles[i].GetComponent<Renderer>().material = onFinish;
@@ -113,6 +118,7 @@ public class PathPuzzle : MonoBehaviour{
     }
 
     public void reset(){
+        _audiosrc.PlayOneShot(fail);
         for(int i = 0; i < Mathf.Sqrt(tiles.Length); i++){
             for(int j = 0; j < Mathf.Sqrt(tiles.Length); j++){
                 board[i, j].GetComponent<PathTile>().reset();

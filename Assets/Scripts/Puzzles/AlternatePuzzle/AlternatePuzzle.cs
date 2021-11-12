@@ -9,8 +9,11 @@ public class AlternatePuzzle : MonoBehaviour{
     List<GameObject> blocks = new List<GameObject>();
 
     public GameObject[] keys;
+    AudioSource _audiosrc;
+    public AudioClip success;
 
     void Start(){
+        _audiosrc = GetComponent<AudioSource>();
         foreach(GameObject key in keys){
           key.SetActive(false);
         }
@@ -36,6 +39,7 @@ public class AlternatePuzzle : MonoBehaviour{
         }
 
         solved = true;
+        _audiosrc.PlayOneShot(success);
 
         for(int i = 0; i < blocks.Count; i++){
             blocks[i].GetComponent<Renderer>().material = onFinish;

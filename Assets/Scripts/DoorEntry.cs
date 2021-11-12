@@ -10,10 +10,13 @@ public class DoorEntry : MonoBehaviour
     public bool locked = true;
     public bool isSceneDoor = false;
     public int keyNum = 0;
+
+    public AudioClip door_open;
+    AudioSource _audiosrc;
     // Start is called before the first frame update
     void Start()
     {
-
+      _audiosrc = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,6 +31,7 @@ public class DoorEntry : MonoBehaviour
       int startingKeys = PublicVars.keys[keyNum];
       if(other.gameObject.CompareTag("Player")){
         if(!locked){
+          StartCoroutine(playaudio());
           if(isSceneDoor){
             SceneManager.LoadScene(nxtlvl);
           }else{
@@ -43,6 +47,7 @@ public class DoorEntry : MonoBehaviour
           if(open == 0){
             print(open);
             locked = false;
+            StartCoroutine(playaudio());
             if(isSceneDoor){
               SceneManager.LoadScene(nxtlvl);
             }else{
@@ -51,5 +56,10 @@ public class DoorEntry : MonoBehaviour
           }
         }
       }
+    }
+
+    IEnumerator playaudio(){
+      _audiosrc.PlayOneShot(door_open);
+      yield return new WaitForSeconds(2f);
     }
 }
