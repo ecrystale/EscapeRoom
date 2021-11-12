@@ -1266,6 +1266,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 1
   door_open: {fileID: 8300000, guid: b36a8ca8912334824910dea45a832a8a, type: 3}
+  doorText: {fileID: 1110302395}
 --- !u!65 &227734105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2424,6 +2425,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 1
   door_open: {fileID: 0}
+  doorText: {fileID: 1110302395}
 --- !u!65 &374877682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3880,6 +3882,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 1
   door_open: {fileID: 0}
+  doorText: {fileID: 0}
 --- !u!65 &734419709
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3986,6 +3989,7 @@ MonoBehaviour:
   isSceneDoor: 1
   keyNum: 2
   door_open: {fileID: 0}
+  doorText: {fileID: 0}
 --- !u!65 &747729811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5471,6 +5475,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109203870}
   m_Mesh: {fileID: 4300014, guid: 6c823a569ab4348479597ed4693bc618, type: 3}
+--- !u!1 &1110302393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1110302394}
+  - component: {fileID: 1110302396}
+  - component: {fileID: 1110302395}
+  m_Layer: 5
+  m_Name: doorText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1110302394
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110302393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1325064276}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -1, y: 310}
+  m_SizeDelta: {x: 800, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1110302395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110302393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6132076, g: 0.4309808, b: 0.4309808, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9d35e559553e3de4fbb66a9c3ebd6661, type: 2}
+    m_FontSize: 100
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 100
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1110302396
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110302393}
+  m_CullTransparentMesh: 1
 --- !u!1 &1110680709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5993,6 +6076,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 1
   door_open: {fileID: 0}
+  doorText: {fileID: 1110302395}
 --- !u!65 &1209341019
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6480,6 +6564,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 1
   door_open: {fileID: 0}
+  doorText: {fileID: 1110302395}
 --- !u!65 &1309229281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6593,6 +6678,11 @@ MeshFilter:
 Transform:
   m_CorrespondingSourceObject: {fileID: 410932, guid: 731670d05affd0045a25600d2045889f, type: 3}
   m_PrefabInstance: {fileID: 640924299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1325064276 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3121301635694881927, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+  m_PrefabInstance: {fileID: 1585632273}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1332691679 stripped
 Transform:
@@ -8147,6 +8237,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 0
   door_open: {fileID: 8300000, guid: b36a8ca8912334824910dea45a832a8a, type: 3}
+  doorText: {fileID: 1110302395}
 --- !u!65 &1576159912
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8924,6 +9015,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 1
   door_open: {fileID: 0}
+  doorText: {fileID: 1110302395}
 --- !u!65 &1642112922
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10762,6 +10854,7 @@ MonoBehaviour:
   isSceneDoor: 0
   keyNum: 1
   door_open: {fileID: 0}
+  doorText: {fileID: 1110302395}
 --- !u!65 &1984505150
 BoxCollider:
   m_ObjectHideFlags: 0
