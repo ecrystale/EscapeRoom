@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TileBoard : MonoBehaviour{
+
     public bool solved = false;
     public GameObject[,] board;
     public GameObject[] tiles;
     public int numChildren;
+    public Material onFinish;
 
     void Start(){
         numChildren = gameObject.transform.childCount;
@@ -46,6 +48,10 @@ public class TileBoard : MonoBehaviour{
                     count++;
                     if(count == tiles.Length){
                         solved = true;
+
+                        for(int k = 0; k < tiles.Length; k++){
+                            tiles[k].GetComponent<Renderer>().material = onFinish;
+                        }       
                     }
                 } else {
                     return;

@@ -19,8 +19,8 @@ public class Tile : MonoBehaviour{
                 }
             }
         }
-        print(pos[0]);
-        print(pos[1]);
+        // print(pos[0]);
+        // print(pos[1]);
 
         // print((pos[0]).ToString() + (pos[1]).ToString());
         bool moved = false;

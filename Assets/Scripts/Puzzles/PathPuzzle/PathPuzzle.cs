@@ -5,9 +5,11 @@ using UnityEngine;
 public class PathPuzzle : MonoBehaviour{
 
     bool solved = false;
-    public static GameObject[,] board;
+    public GameObject[,] board;
     GameObject[] tiles;
     int[] last = new int[2];
+    int numChildren;
+    public Material onFinish;
 
     public void setLast(GameObject curr){
         int[] currPos = new int[2];
@@ -25,9 +27,15 @@ public class PathPuzzle : MonoBehaviour{
     }
 
     void Start(){
-        tiles = GameObject.FindGameObjectsWithTag("PathTile");
-        board = new GameObject[(int) Mathf.Sqrt(tiles.Length), (int) Mathf.Sqrt(tiles.Length)];
+        numChildren = gameObject.transform.childCount;
+        tiles = new GameObject[numChildren];
+        board = new GameObject[numChildren, numChildren];
 
+        for(int i = 0; i < numChildren; i++){
+            tiles[i] = gameObject.transform.GetChild(i).gameObject;
+        }
+
+        // print(tiles.Length);
         int count = 0;
         for(int i = 0; i < Mathf.Sqrt(tiles.Length); i++){
             for(int j = 0; j < Mathf.Sqrt(tiles.Length); j++){
@@ -43,6 +51,8 @@ public class PathPuzzle : MonoBehaviour{
     }
 
     void LateUpdate(){
+        // print(solved);
+
         if(!solved){
             for(int i = 0; i < Mathf.Sqrt(tiles.Length); i++){
                 for(int j = 0; j < Mathf.Sqrt(tiles.Length); j++){
@@ -53,6 +63,10 @@ public class PathPuzzle : MonoBehaviour{
             }
 
             solved = true;
+
+            for(int i = 0; i < tiles.Length; i++){
+                tiles[i].GetComponent<Renderer>().material = onFinish;
+            }
         }
 
         Destroy(GetComponent<PathPuzzle>());

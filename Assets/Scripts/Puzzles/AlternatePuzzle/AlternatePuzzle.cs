@@ -5,6 +5,7 @@ using UnityEngine;
 public class AlternatePuzzle : MonoBehaviour{
 
     bool solved = false;
+    public Material onFinish;
     List<GameObject> blocks = new List<GameObject>();
 
     void Start(){
@@ -30,6 +31,10 @@ public class AlternatePuzzle : MonoBehaviour{
         }
 
         solved = true;
+
+        for(int i = 0; i < blocks.Count; i++){
+            blocks[i].GetComponent<Renderer>().material = onFinish;
+        }
     }
 
     public List<GameObject> getBlocks(){
