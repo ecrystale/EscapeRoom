@@ -10,11 +10,16 @@ public class TileBoard : MonoBehaviour{
     public int numChildren;
     public Material onFinish;
 
+    public GameObject[] keys;
+
     void Start(){
+        foreach(GameObject key in keys){
+          key.SetActive(false);
+        }
         numChildren = gameObject.transform.childCount;
         tiles = new GameObject[numChildren];
         board = new GameObject[numChildren, numChildren];
-       
+
         for(int i = 0; i < numChildren; i++){
             tiles[i] = gameObject.transform.GetChild(i).gameObject;
         }
@@ -51,7 +56,10 @@ public class TileBoard : MonoBehaviour{
 
                         for(int k = 0; k < tiles.Length; k++){
                             tiles[k].GetComponent<Renderer>().material = onFinish;
-                        }       
+                            foreach(GameObject key in keys){
+                              key.SetActive(true);
+                            }
+                        }
                     }
                 } else {
                     return;

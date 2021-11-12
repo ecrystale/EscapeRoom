@@ -8,7 +8,12 @@ public class AlternatePuzzle : MonoBehaviour{
     public Material onFinish;
     List<GameObject> blocks = new List<GameObject>();
 
+    public GameObject[] keys;
+
     void Start(){
+        foreach(GameObject key in keys){
+          key.SetActive(false);
+        }
         for(int i = 0; i < gameObject.transform.childCount; i++){
             blocks.Add(gameObject.transform.GetChild(i).gameObject);
         }
@@ -34,6 +39,9 @@ public class AlternatePuzzle : MonoBehaviour{
 
         for(int i = 0; i < blocks.Count; i++){
             blocks[i].GetComponent<Renderer>().material = onFinish;
+            foreach(GameObject key in keys){
+              key.SetActive(true);
+            }
         }
     }
 

@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if(Input.GetMouseButtonDown(0)){ //1 is right, 0 is left
+      if(Input.GetMouseButtonDown(1)){ //1 is right, 0 is left
         RaycastHit hit;
         if(Physics.Raycast(maincam.ScreenPointToRay(Input.mousePosition), out hit, 300)){
           _navMesh.destination = hit.point; //destination to player for enemies

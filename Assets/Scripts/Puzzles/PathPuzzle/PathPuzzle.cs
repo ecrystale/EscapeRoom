@@ -11,6 +11,8 @@ public class PathPuzzle : MonoBehaviour{
     int numChildren;
     public Material onFinish;
 
+    public GameObject[] keys;
+
     public void setLast(GameObject curr){
         int[] currPos = new int[2];
 
@@ -22,11 +24,14 @@ public class PathPuzzle : MonoBehaviour{
                 }
             }
         }
-        
+
         last = currPos;
     }
 
     void Start(){
+        foreach(GameObject key in keys){
+          key.SetActive(false);
+        }
         numChildren = gameObject.transform.childCount;
         tiles = new GameObject[numChildren];
         board = new GameObject[numChildren, numChildren];
@@ -66,6 +71,9 @@ public class PathPuzzle : MonoBehaviour{
 
             for(int i = 0; i < tiles.Length; i++){
                 tiles[i].GetComponent<Renderer>().material = onFinish;
+                foreach(GameObject key in keys){
+                  key.SetActive(true);
+                }
             }
         }
 
