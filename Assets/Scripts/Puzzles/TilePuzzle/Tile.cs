@@ -5,8 +5,15 @@ using UnityEngine;
 public class Tile : MonoBehaviour{
 
     private int[,] offset = {{1, 0}, {0, 1}, {-1, 0},  {0, -1}};
+    public AudioClip press;
+    AudioSource _audiosrc;
 
+    void Start(){
+      _audiosrc = GetComponent<AudioSource>();
+    }
+    
     void OnMouseDown(){
+        _audiosrc.PlayOneShot(press);
         int[] pos = new int[2];
         int numChildren = (int) Mathf.Sqrt(transform.parent.gameObject.GetComponent<TileBoard>().numChildren);
 
@@ -42,7 +49,7 @@ public class Tile : MonoBehaviour{
                 GameObject temp = transform.parent.gameObject.GetComponent<TileBoard>().board[pos[0], pos[1]];
                 transform.parent.gameObject.GetComponent<TileBoard>().board[pos[0], pos[1]] = transform.parent.gameObject.GetComponent<TileBoard>().board[pos[0] + offset[i, 0], pos[1] + offset[i, 1]];
                 transform.parent.gameObject.GetComponent<TileBoard>().board[pos[0] + offset[i, 0], pos[1] + offset[i, 1]] = temp;
-                
+
                 moved = true;
             }
         }

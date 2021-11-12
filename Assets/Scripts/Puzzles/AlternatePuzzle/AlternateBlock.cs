@@ -7,11 +7,16 @@ public class AlternateBlock : MonoBehaviour
     public bool state;
     Vector3 originalPos;
 
+    public AudioClip press;
+    AudioSource _audiosrc;
+
     void Start(){
-        originalPos = transform.position;
+      _audiosrc = GetComponent<AudioSource>();
+      originalPos = transform.position;
     }
 
     void OnMouseDown(){
+        _audiosrc.PlayOneShot(press);
         List<GameObject> blocks = transform.parent.gameObject.GetComponent<AlternatePuzzle>().getBlocks();
         int blockIndex = int.Parse(gameObject.name);
 

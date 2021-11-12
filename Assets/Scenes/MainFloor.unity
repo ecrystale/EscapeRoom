@@ -5464,7 +5464,7 @@ PrefabInstance:
     - target: {fileID: 51194372432252192, guid: 1be8ae719068342f49e9d56f8e7251ad, type: 3}
       propertyPath: press
       value: 
-      objectReference: {fileID: 8300000, guid: fd77a83ee9cd04f519f8cad5863883e6, type: 3}
+      objectReference: {fileID: 8300000, guid: f56fed7b56e6d48dfaa96333cf8ea296, type: 3}
     - target: {fileID: 1097137499925416817, guid: 1be8ae719068342f49e9d56f8e7251ad, type: 3}
       propertyPath: m_Name
       value: PathPuzzle
@@ -8422,6 +8422,7 @@ MonoBehaviour:
   locked: 1
   isSceneDoor: 0
   keyNum: 0
+  door_open: {fileID: 0}
 --- !u!65 &1493745181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9992,6 +9993,7 @@ MonoBehaviour:
   locked: 1
   isSceneDoor: 0
   keyNum: 0
+  door_open: {fileID: 0}
 --- !u!65 &1722891159
 BoxCollider:
   m_ObjectHideFlags: 0

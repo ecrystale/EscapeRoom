@@ -9,7 +9,11 @@ public class PathTile : MonoBehaviour{
     Material defaultMat;
     Renderer rend;
 
+    public AudioClip press;
+    AudioSource _audiosrc;
+
     void Start(){
+        _audiosrc = GetComponent<AudioSource>();
         rend = GetComponent<Renderer>();
         defaultMat = rend.material;
 
@@ -27,6 +31,7 @@ public class PathTile : MonoBehaviour{
     }
 
     void OnMouseDown(){
+        _audiosrc.PlayOneShot(press);
         bool adj = transform.parent.gameObject.GetComponent<PathPuzzle>().isAdjacent(gameObject);
         if(!adj){
             transform.parent.gameObject.GetComponent<PathPuzzle>().reset();
