@@ -10,9 +10,15 @@ public class Timer : MonoBehaviour
     //public float timeRemaining = 10;
     public Text displayText;
     bool timerOn = true;
+    private static GameObject Instance;
 
     void Awake() {
-        DontDestroyOnLoad(transform.gameObject);
+        if (Instance == null){
+             Instance = transform.gameObject;
+             DontDestroyOnLoad(transform.gameObject);
+        } else {
+           Destroy(transform.gameObject);
+        }
     }
 
     // Update is called once per frame
