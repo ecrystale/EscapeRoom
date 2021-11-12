@@ -30,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     }
     void OnTriggerEnter(Collider other){
       if(other.gameObject.CompareTag("Key")){
-        _audiosrc.PlayOneShot(collect);
+        _audiosrc.PlayOneShot(collect, 0.35f);
       }
     }
 
