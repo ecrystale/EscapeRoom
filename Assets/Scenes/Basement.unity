@@ -7852,6 +7852,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3121301634628124797, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 129
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124797, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 161
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_Color.b
+      value: 0.4309808
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4309808
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9d35e559553e3de4fbb66a9c3ebd6661, type: 2}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3121301634628124799, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3121301635694881923, guid: 4e10b732739384413b9e8c5c3cd5ce49, type: 3}
       propertyPath: m_Name
       value: Canvas
