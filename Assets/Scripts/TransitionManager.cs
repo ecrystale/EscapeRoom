@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class TransitionManager : MonoBehaviour{
 
-    private float fadeSpeed = 0.2f;
     public Image fadeImage;
 
     void Awake(){
